@@ -1,0 +1,48 @@
+import { Routes } from '@angular/router';
+import { HomeComponent } from './home/home.component';
+import { AboutComponent } from './common/about/about.component';
+import { ContactComponent } from './common/contact/contact.component';
+import { CustomerComponent } from './common/customer/customer.component';
+import { AddComponent } from './common/add/add.component';
+import { StatusComponent } from './status/status.component';
+import { authGuard } from './guard/auth.guard';
+import { childauthGuard } from './guard/childauth.guard';
+import { authdGuard } from './guard/authd.guard';
+import { LoginComponent } from './common/login/login.component';
+
+export const routes: Routes = [
+    {
+        path:'', component:HomeComponent,canActivate:[authGuard],
+    },
+    {
+        path:'about', component:AboutComponent,canActivate:[authGuard],
+    },
+    {
+        path:'about/:submenu/:id', component:AboutComponent,canActivate:[authGuard],
+    },
+    {
+        path:'login', component:LoginComponent,
+    },
+    {
+        path:'contact',loadComponent:()=>import('./common/contact/contact.component').then(m=>m.ContactComponent)
+        ,canActivate:[authGuard],
+    },
+
+    {
+        path:'customer',
+        canActivate:[authGuard],canActivateChild:[childauthGuard],
+        canDeactivate:[authdGuard],
+        children:[
+            {
+                path:'add', component: AddComponent,canActivate:[authGuard]
+            },
+            {
+                path:'edit/:id', component: AddComponent
+            }
+        ]
+    },
+    {
+        path:'**', component:StatusComponent
+    }
+
+];
