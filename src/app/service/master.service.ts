@@ -14,4 +14,8 @@ export class MasterService {
 
     return this.http.get<user[]>('http://localhost:3000/user?id=' + _data.username + '&&password=' + _data.password);
   }
+
+  isloggedIn() {
+    return localStorage.getItem('username') != null;
+  }
 }
