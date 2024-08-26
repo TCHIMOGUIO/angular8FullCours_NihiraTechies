@@ -10,12 +10,14 @@ export class MasterService {
   constructor(private http: HttpClient) { }
 
   Proceedlogin(_data: loginmodel){
-
-
     return this.http.get<user[]>('http://localhost:3000/user?id=' + _data.username + '&&password=' + _data.password);
   }
 
   isloggedIn() {
     return localStorage.getItem('username') != null;
+  }
+
+  ProceedRegister(_data: user){
+    return this.http.post('http://localhost:3000/user', _data);
   }
 }

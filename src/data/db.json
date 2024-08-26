@@ -1,6 +1,32 @@
 {
-    "user": [
-      { "id": "admin", "name": "adminuser", "password": "admin", "role": "admin" },
-      { "id": "suser", "name": "sales user", "password": "test", "role": "salesman" }
-    ]
-  }
+  "user": [
+    {
+      "id": "admin",
+      "name": "adminuser",
+      "password": "admin",
+      "role": "admin"
+    },
+    {
+      "id": "suser",
+      "name": "sales user",
+      "password": "test",
+      "role": "salesman"
+    },
+    {
+      "id": "jkhfg",
+      "password": "QSKLM",
+      "name": "FJKLMÙM",
+      "role": "salesman",
+      "gender": "m",
+      "email": "GFH@GJK"
+    },
+    {
+      "id": "sqd",
+      "password": "JSSFUGIO",
+      "name": "qDSFGDFHGJKHLK",
+      "role": "supervisor",
+      "gender": "m",
+      "email": "WFGHJKLK@CXWXVCB.COM"
+    }
+  ]
+}

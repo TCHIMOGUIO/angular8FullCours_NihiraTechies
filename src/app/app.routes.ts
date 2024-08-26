@@ -9,6 +9,7 @@ import { authGuard } from './guard/auth.guard';
 import { childauthGuard } from './guard/childauth.guard';
 import { authdGuard } from './guard/authd.guard';
 import { LoginComponent } from './common/login/login.component';
+import { RegisterComponent } from './common/register/register.component';
 
 export const routes: Routes = [
     {
@@ -19,6 +20,9 @@ export const routes: Routes = [
     },
     {
         path:'about/:submenu/:id', component:AboutComponent,canActivate:[authGuard],
+    },
+    {
+        path:'register', component:RegisterComponent,
     },
     {
         path:'login', component:LoginComponent,
