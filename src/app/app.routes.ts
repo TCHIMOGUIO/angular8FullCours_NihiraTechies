@@ -10,6 +10,7 @@ import { childauthGuard } from './guard/childauth.guard';
 import { authdGuard } from './guard/authd.guard';
 import { LoginComponent } from './common/login/login.component';
 import { RegisterComponent } from './common/register/register.component';
+import { ProductComponent } from './common/product/product.component';
 
 export const routes: Routes = [
     {
@@ -26,6 +27,9 @@ export const routes: Routes = [
     },
     {
         path:'login', component:LoginComponent,
+    },
+    {
+        path:'product', component:ProductComponent, canActivate:[authGuard],
     },
     {
         path:'contact',loadComponent:()=>import('./common/contact/contact.component').then(m=>m.ContactComponent)

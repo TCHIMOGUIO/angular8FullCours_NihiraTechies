@@ -26,7 +26,30 @@
       "name": "qDSFGDFHGJKHLK",
       "role": "supervisor",
       "gender": "m",
-      "email": "WFGHJKLK@CXWXVCB.COM"
+      "email": "WFGHJKL@VCB.COM"
+    }
+  ],
+  "product": [
+    {
+      "id": 1,
+      "name": "Criket bat",
+      "description": "Hight quality we can use for leather ball",
+      "price": 10000,
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "ball",
+      "description": "leather ball",
+      "price": "100",
+      "status": true
+    },
+    {
+      "id": 0,
+      "name": "gdsj",
+      "description": "qjsyj",
+      "price": "150",
+      "status": true
     }
   ]
 }

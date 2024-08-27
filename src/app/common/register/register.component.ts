@@ -58,8 +58,7 @@ export class RegisterComponent {
        }
       this.service.ProceedRegister(_data).subscribe(item => {
        alert("Redistered successfully.");
-       this.router.navigateByUrl('/login');
-       console.log('kngfgbn,!dg:');
+       this.router.navigateByUrl('/login'); 
        
       });
      
