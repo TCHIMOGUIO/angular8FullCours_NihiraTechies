@@ -59,16 +59,34 @@ export class ProductComponent implements OnInit {
 
   Createproduct(){
 
-    this.Openpopup();
+    this.Openpopup(0, "create product");
   }
 
-  Openpopup(){
+  Openpopup(id:number=0, title:string){
     this.dialog.open(AddproductComponent, {
       width: '40%',
       enterAnimationDuration: '1000ms',
-      exitAnimationDuration: '1000ms'
+      exitAnimationDuration: '1000ms',
+      data: {
+        id: id,
+        title: title
+      }
     }).afterClosed().subscribe(item => {
       this.Loadproducts();
     })
+  }
+
+  Deleteproduct(id: number){
+
+    if(confirm('Do you want to remove?')){
+      this.service.Removeproduct(id).subscribe(item => {
+        alert('Removed successfully.');
+        this.Loadproducts();
+      })
+    }
+  }
+
+  Editproduct(id: number){
+    this.Openpopup(id, 'Edit Product')
   }
 }

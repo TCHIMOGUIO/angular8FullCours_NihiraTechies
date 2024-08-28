@@ -25,7 +25,7 @@ export class ProductService {
   }
 
   Updateproduct(_data: Products){
-    return this.http.post(this.baseurl + '/' + _data.id, _data)
+    return this.http.put(this.baseurl + '/' + _data.id, _data)
   }
 
   Removeproduct(id: number){
